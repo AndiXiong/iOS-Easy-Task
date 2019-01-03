@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-bf-uqA">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-bf-uqA">
                                 <rect key="frame" x="50" y="70" width="275" height="547"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-wP-nh2">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="273.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="258.5"/>
                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="Button">
@@ -32,14 +32,15 @@
                                             <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tib-rP-Y0B"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu8-wj-8lf">
-                                        <rect key="frame" x="116.5" y="273.5" width="42" height="273.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Temperature at Houston" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-oc-z2D">
+                                        <rect key="frame" x="0.0" y="288.5" width="275" height="258.5"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="sEB-oc-z2D" firstAttribute="width" secondItem="2MU-bf-uqA" secondAttribute="width" id="IId-ow-f1R"/>
                                     <constraint firstItem="zdt-wP-nh2" firstAttribute="width" secondItem="2MU-bf-uqA" secondAttribute="width" id="bVB-DF-si5"/>
                                 </constraints>
                             </stackView>
@@ -55,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="zdt-wP-nh2" id="5G3-jn-JVu"/>
-                        <outlet property="sentence" destination="Iu8-wj-8lf" id="wh0-ZL-8Fd"/>
+                        <outlet property="sentence" destination="sEB-oc-z2D" id="j4t-vu-CYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
