@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var sentence: UILabel!
+    @IBOutlet weak var sentence: UITextField!
     
     let jsonUrl : String = "https://api.openweathermap.org/data/2.5/weather?id=4699066&APPID=53f3fdfa7dacd867b6b4e36f3266ba8a"
     var temp: Double! = 0
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
                 guard let main = json["main"] as? [String: Double]  else {return}
                 self.temp = main["temp"]
                 DispatchQueue.main.async { // Correct
-                    self.sentence.text = String(format:"The temperature in Texas is %.2f degree Celsius.", self.temp - 273.15)
+                    self.sentence.text = String(format:"Temperature at Houston: %.2f Celsius.", self.temp - 273.15)
                 }
                 //print(json)
                 print(self.temp)
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sentence.text = "The temperature in Texas is ??? degree Celsius.\n\n Tap the button to find out!"
+        sentence.text = "Temperature at Houston: ???"
     }
 
 }
